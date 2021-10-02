@@ -1,0 +1,26 @@
+Se podia ajustar el Scanner para aceotar tokens de mas de un caracter y modificar el
+automata o Leer constantemente numeros, cualquiera de los dos funciona
+Base
+S -> E EOF
+E -> E + T | E - T | T
+T -> T * F | T / F | F
+F -> num | (E) | -E 
+
+Sin derivacion
+S -> E EOF
+E -> TE'
+E'-> +TE' | -TE' | e
+T -> LFT'
+T'-> *LFT' | /LFT' | e
+L -> -L | e
+F -> (E) | numF'
+F'-> numF' | e
+
+First E ->  First T -> First L -> (e)First F -> {(,num,-}
+First E' -> {+,-,e}
+First T -> First F -> {(,num}
+First T' -> {*,/,e}
+First F -> {(,num}
+First FP -> {num,e}
+
+
