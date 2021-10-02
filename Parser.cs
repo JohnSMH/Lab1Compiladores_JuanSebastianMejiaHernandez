@@ -10,6 +10,7 @@ namespace LabCompiladores
         Scanner scanner;
         Token token;
 
+
         private double E(){
             switch (token.Tag)
             {
